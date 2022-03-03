@@ -1,0 +1,16 @@
+.content {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: white;
+}
+
+.foot {
+  margin-left: 15px;
+}
+
+.partner {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
