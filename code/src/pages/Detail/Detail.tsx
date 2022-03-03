@@ -12,12 +12,6 @@ import { ShoppingCartOutlined } from '@ant-design/icons'
 
 const { RangePicker } = DatePicker;
 
-const data = productList.filter((p)=>{
-  return p.id === 1
-})
-console.log(data[0]);
-
-
 export const Detail: React.FC = () =>{
   const params = useParams()
   const id = params.id
@@ -27,15 +21,22 @@ export const Detail: React.FC = () =>{
   // const [error, setError] = useState<string|null>(null)
 
   const loading = useSelector(state=>state.productDetail.loading)
-  const product = useSelector(state=>state.productDetail.data)
+  // const product = useSelector(state=>state.productDetail.data)
+
+  const data = productList.filter((p)=>{
+    return String(p.id)=== id
+  })
+  const product = data[0]
+  console.log('Detail', data[0]);
+  console.log('Detail', loading);
+  
   const error = useSelector(state=>state.productDetail.error)
-
   const shoppingCartLoaing = useSelector(state=>state.shoppingCart.loading)
-
   const dispatch = useDispatch()
   
   useEffect(()=>{
     const fetchData = ()=>{
+      console.log('到这里了');
       dispatch(getProductDetail(id))
     }
     fetchData();
@@ -68,8 +69,8 @@ export const Detail: React.FC = () =>{
                 title={product.title}
                 shortDescription={product.description}
                 price={product.originalPrice}
-                coupons={product.coupons}
-                points={product.points}
+                coupons={String(product.coupons)}
+                points={String(product.points)}
                 discount={product.price}
                 rating={product.rating}
                 pictures={product.touristRoutePictures.map((p)=>p.url)}

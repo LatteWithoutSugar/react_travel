@@ -16,6 +16,7 @@ const initialState: ProductDetailState = {
 export const getProductDetail = createAsyncThunk(
   "productDetail/getProductDetail",
   (id: string | undefined)=>{
+    console.log('getProductDetail',productList);
     const data = productList.filter((p)=>{ return String(p.id) === id});
     return data[0]
   }
