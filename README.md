@@ -8,11 +8,11 @@ react+typescript 仿照携程网搭建电商平台 使用假数据实现若干�
 
 详情页面：
 
-![detail](\detail.png)
+![detail](detail.png)
 
 登录注册页面：
 
-![register](D:\Project\web-project\web-project\Github\react_travel\register.png)
+![register](register.png)
 
 购物车页面：
 
